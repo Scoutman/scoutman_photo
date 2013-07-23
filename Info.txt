@@ -1,0 +1,28 @@
+Übersicht der environment variables:
+
+Eingetragen in: ~/.virtualenvs/scoutman_photo/bin/activate
+
+# Django scoutman_photo project configuration
+export DJANGO_SETTINGS_MODULE=scoutman_photo.settings.local
+
+export ADMIN_NAME=
+export ADMIN_EMAIL=
+export SECRET_KEY=
+export INTERNAL_IPS=
+export DB_ENGINE=django.db.backends.mysql
+export DB_NAME=
+export DB_USER=
+export DB_PASSWORD=
+export DB_HOST=
+export DB_PORT=
+
+
+
+
+Testserver starten:
+python manage.py runserver 0.0.0.0:8080 --settings=scoutman_photo.settings.local
+
+
+
+
+

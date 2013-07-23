@@ -1,0 +1,139 @@
+body {
+	font-family:'Open Sans', sans-serif;
+	color:#dddddd;
+	font-size: 14px;
+	text-decoration:none;
+	line-height: 1.5;
+	
+	background-attachment: fixed;
+	background-clip: border-box;
+	background-image: url('../img/background.svg');
+	background-origin: padding-box;
+	background-position: 50% 50%;
+	background-repeat: repeat;
+	background-size: 100% 100%;
+	
+	max-width: 1150px;
+	width: 90%;
+	min-width: 300px;		
+	margin: 0px auto 20px;
+}
+
+.header {
+	margin: 0px;
+	padding-top: 20px;
+}
+
+.content {
+	background: rgba(48, 48, 48, 0.5);
+	margin: 20px auto;
+	padding: 40px;
+}
+
+.gallery {
+	background: rgba(48, 48, 48, 0.5);
+	padding-bottom: 20px;
+	
+}
+	
+.gallery a {
+	margin: 0px;
+	padding: 0px;
+	margin-left: 20px;
+	margin-top: 20px;
+	display: inline-block;
+	outline: 0;
+}
+
+.gallery img {
+	display: block;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+h1 {
+	color: #91d42b;
+	font-size: 22px;
+	font-weight: normal;
+	letter-spacing: 1.5px;
+	margin-top: 0px;
+	line-height: 1;
+}
+
+h2 {
+	color: #91d42b;
+	font-size: 18px;
+	font-weight: normal;
+	letter-spacing: 1.5px;
+	margin-top: 0px;
+	line-height: 1;
+}
+
+
+
+a img {  
+	border-style: none;
+	border: 0;
+}
+
+/* Navigation */
+.nav {
+	float: right;
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	padding-bottom: 10px;
+	padding-right: 20px;
+	font-size: 18px;		
+}
+
+.nav li {
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+	margin-left: 30px;
+	text-transform:uppercase;
+}
+
+.nav ul {
+	display: none;
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;	
+	position: absolute;
+	background: rgba(48, 48, 48, 0.9);
+	margin: 0px;
+	padding: 0px;
+	z-index: 100;
+	text-transform:uppercase;
+}
+
+.nav ul li {
+	height: 32px;
+	line-height: 32px;
+	display: block;
+	margin: 0px;
+	padding: 0px;
+}		
+
+.nav ul li a {
+	padding: 0px  10px 0px 10px;
+}
+
+.nav li a:link {color:#dddddd; text-decoration:none; display: block;}
+.nav li a:visited {color:#dddddd; text-decoration:none;}
+.nav li a:hover {color:#91d42b; text-decoration:none;}
+.nav li a:active {color:#91d42b; text-decoration:none;}
+
+.nav ul li a:link {font-size: 14px;}
+.nav ul li a:hover {color: #91d42b;}
+
+/*  Links */
+a:link {color:#91d42b; text-decoration:none;}
+a:visited {color:#91d42b; text-decoration:none;}
+a:hover {color:#91d42b; text-decoration:underline;}
+a:active {color:#91d42b; text-decoration:underline;}
