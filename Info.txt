@@ -15,14 +15,19 @@ export DB_USER=
 export DB_PASSWORD=
 export DB_HOST=
 export DB_PORT=
-
+export ALLOWED_HOSTS=
+export EMAIL_HOST=
+export EMAIL_HOST_PASSWORD=
+export EMAIL_HOST_USER=
+export EMAIL_PORT=
 
 
 
 Testserver starten:
 python manage.py runserver 0.0.0.0:8080 --settings=scoutman_photo.settings.local
 
-
+Testserver mit production settings starten:
+python manage.py runserver 0.0.0.0:8080 --settings=scoutman_photo.settings.production --insecure
 
 
 
