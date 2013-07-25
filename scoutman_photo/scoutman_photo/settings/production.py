@@ -68,5 +68,5 @@ SERVER_EMAIL = EMAIL_HOST_USER
 ########## SITE CONFIGURATION
 # Hosts/domain names that are valid for this site
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = os.environ["ALLOWED_HOSTS"]
+ALLOWED_HOSTS = [os.environ["ALLOWED_HOSTS"]]
 ########## END SITE CONFIGURATION
