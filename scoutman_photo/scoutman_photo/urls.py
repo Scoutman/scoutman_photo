@@ -7,14 +7,6 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', TemplateView.as_view(template_name='base.html')),
-
-    # Examples:
-    # url(r'^$', 'scoutman_photo.views.home', name='home'),
-    # url(r'^scoutman_photo/', include('scoutman_photo.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
+	url(r'^upload/', include('upload.urls', namespace='upload')),
     url(r'^admin/', include(admin.site.urls)),
 )
