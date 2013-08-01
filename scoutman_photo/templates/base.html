@@ -24,32 +24,20 @@
 	<div>
 		<ul class='nav'>
 			<li>
-				<a href="">Homepage</a>
+				<a href="{% url 'home' %}">Homepage</a>
 			</li>
 			<li>
-				<a href="">Galerie</a>
+				<a href="gallery">Galerie</a>
 				<ul>
-					<li>
-						<a href="">Your Favorites</a>
-					</li>
-					<li>
-						<a href="">Natur</a>
-					</li>
-					<li>
-						<a href="">Berge</a>
-					</li>
-					<li>
-						<a href="">Blumen</a>
-					</li>					
+					{% for category in category_list %}
+						<li>
+							<a href="gallery/{{ category.slug }}">{{ category.name }}</a>
+						</li>						
+					{% endfor %}				
 				</ul>
 			</li>
 			<li>
-				<a href="">Blog</a>
-				<ul>
-					<li>
-						<a href="">Features</a>
-					</li>
-				</ul>
+				<a href="{% url 'blog' %}">Blog</a>
 			</li>
 			<li>
 				<a href="">Über mich</a>				
@@ -67,38 +55,12 @@
 			<img height="340" width="1150" src="{% static 'images/nemo.jpg' %}" data-thumb="{% static 'images/nemo.jpg' %}" />
 		</div>
 	</div>	
+
 	
 	{% block upload %}{% endblock %}
-	
-	<div class="content">
-		<h1>Test Überschrift</h1>
-		<h2>Test Überschrift</h2>
+	{% block gallery %}{% endblock %}
+	{% block blog %}{% endblock %}
 
-		
-		test as asd dasd sadas d<br />
-		test as asd dasd sadas d<br />
-		test as asd dasd sadas d<br />
-		test as asd dasd sadas d<br />
-		test as asd dasd sadas d<br />
-		test as asd <a href="">ich bin ein link</a> dasd sadas d<br />
-		test as asd dasd sadas d<br />
-		test as asd dasd sadas d<br />
-		test as asd dasd sadas d<br />
-		test as asd dasd sadas d<br />
-		test as asd dasd sadas d<br />
-				
-	</div>
-
-	<div class="gallery">
-		
-		<a href="{% static 'images/1.jpg' %}" data-lightbox="gallery-1"><img height="260" width="260" src="{% static 'images/1.jpg' %}" /></a>
-		<a href="{% static 'images/2.jpg' %}" data-lightbox="gallery-1"><img height="260" width="260" src="{% static 'images/2.jpg' %}" /></a>
-		<a href="{% static 'images/3.jpg' %}" data-lightbox="gallery-1"><img height="260" width="260" src="{% static 'images/3.jpg' %}" /></a>
-		<a href="{% static 'images/4.jp' %}g" data-lightbox="gallery-1"><img height="260" width="260" src="{% static 'images/4.jpg' %}" /></a>
-		<a href="{% static 'images/5.jp' %}g" data-lightbox="gallery-1"><img height="260" width="260" src="{% static 'images/5.jpg' %}" /></a>
-		<a href="{% static 'images/6.jpg' %}" data-lightbox="gallery-1"><img height="260" width="260" src="{% static 'images/6.jp' %}g" /></a>
-		
-	</div>
 	
 	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/jquery.nivo.slider.pack.js' %}"></script>

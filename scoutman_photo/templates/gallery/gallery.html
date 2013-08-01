@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block upload %}
+
+	<div class="gallery">
+		
+		<a href="{% static 'images/1.jpg' %}" data-lightbox="gallery-1"><img height="260" width="260" src="{% static 'images/1.jpg' %}" /></a>
+		<a href="{% static 'images/2.jpg' %}" data-lightbox="gallery-1"><img height="260" width="260" src="{% static 'images/2.jpg' %}" /></a>
+		<a href="{% static 'images/3.jpg' %}" data-lightbox="gallery-1"><img height="260" width="260" src="{% static 'images/3.jpg' %}" /></a>
+		<a href="{% static 'images/4.jp' %}g" data-lightbox="gallery-1"><img height="260" width="260" src="{% static 'images/4.jpg' %}" /></a>
+		<a href="{% static 'images/5.jp' %}g" data-lightbox="gallery-1"><img height="260" width="260" src="{% static 'images/5.jpg' %}" /></a>
+		<a href="{% static 'images/6.jpg' %}" data-lightbox="gallery-1"><img height="260" width="260" src="{% static 'images/6.jp' %}g" /></a>
+		
+	</div>
+
+{% endblock %}
