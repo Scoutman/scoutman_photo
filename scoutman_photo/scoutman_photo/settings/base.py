@@ -1,3 +1,4 @@
+# encoding: utf-8
 """Common settings and globals."""
 
 import os
@@ -141,6 +142,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
 	
 	'gallery.context_processors.menu',
+	'common.context_processors.config',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
@@ -201,7 +203,8 @@ THIRD_PARTY_APPS = (
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
-    'upload',
+    'home',
+	'upload',
     'gallery',
 )
 
@@ -247,3 +250,15 @@ LOGGING = {
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
 WSGI_APPLICATION = '%s.wsgi.application' % SITE_NAME
 ########## END WSGI CONFIGURATION
+
+
+########## SITE CONFIGURATION
+SITE_CONFIG = {
+	'site_name' : 'Sascha Mlakar - Photography',
+	'home_slider_width' : '1150',
+	'home_slider_height' : '340',
+	'thumb_width' : '260',
+	'thumb_height' : '260',
+}
+########## ENDSITE CONFIGURATION
+

@@ -5,6 +5,8 @@ body {
 	text-decoration:none;
 	line-height: 1.5;
 	
+	background-color: #424343;
+	
 	background-attachment: fixed;
 	background-clip: border-box;
 	background-image: url('../img/background.svg');
@@ -26,8 +28,12 @@ body {
 
 .content {
 	background: rgba(48, 48, 48, 0.5);
-	margin: 20px auto;
 	padding: 40px;
+}
+
+.footer {
+	padding-top: 10px;
+	text-align: center;
 }
 
 .gallery {
@@ -47,6 +53,11 @@ body {
 
 .gallery img {
 	display: block;
+}
+
+.gallery h1 {
+	padding-top: 40px;
+	padding-left: 40px;
 }
 
 a:hover {
@@ -89,6 +100,10 @@ a img {
 	padding-bottom: 10px;
 	padding-right: 20px;
 	font-size: 18px;		
+}
+
+.nav_active {
+	color:#91d42b!important;
 }
 
 .nav li {

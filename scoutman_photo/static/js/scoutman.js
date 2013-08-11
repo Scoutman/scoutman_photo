@@ -16,4 +16,19 @@ $(document).ready(function () {
 		}
 	);
 	
+	$('.fancybox').fancybox({
+		padding : 8,
+		openEffect	: 'fade',
+		closeEffect	: 'fade',
+		openSpeed : 200,
+		closeSpeed : 200,
+		nextSpeed : 200,
+		prevSpeed : 200,
+		helpers: {
+			title : {
+				type : 'float'
+			}
+		}
+	});
+	
 });

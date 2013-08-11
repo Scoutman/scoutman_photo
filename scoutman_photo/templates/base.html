@@ -3,13 +3,12 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Sascha Mlakar - Photography</title>
+<title>{% block site_name %}{{config.site_name}}{% endblock %}</title>
 
-<link rel="stylesheet" type="text/css" href="{% static '' %}css/normalize.css">
+<link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}">
 <link rel="stylesheet" href="{% static 'css/scoutman.css' %}" type="text/css" media="screen" />
-<link rel="stylesheet" href="{% static 'css/nivo-slider.css' %}" type="text/css" media="screen" />
-<link rel="stylesheet" href="{% static 'css/nivo-slider-default.css' %}" type="text/css" media="screen" />
-<link rel="stylesheet" href="{% static 'css/lightbox.css' %}" type="text/css" media="screen" />
+{% block css %}{% endblock %}
 
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" media="screen" rel="stylesheet" type="text/css" />
 
@@ -18,54 +17,63 @@
 <body>
 
 	<div class="header">
-		<img src="{% static 'img/header.png' %}" /> 
+		<a href="{% url 'home:home' %}"><img src="{% static 'img/header.png' %}" /></a>
 	</div>
 
 	<div>
+		
 		<ul class='nav'>
+			
+			<li></li>
 			<li>
-				<a href="{% url 'home' %}">Homepage</a>
+				<a class="{% block nav_home_active %}{% endblock %}" href="{% url 'home:home' %}">Home</a>
 			</li>
 			<li>
-				<a href="gallery">Galerie</a>
+				<a class="{% block nav_gallery_active %}{% endblock %}" href="">Galerie</a>
 				<ul>
 					{% for category in category_list %}
 						<li>
-							<a href="gallery/{{ category.slug }}">{{ category.name }}</a>
-						</li>						
-					{% endfor %}				
+							<a href="{% url 'gallery:category' category.slug %}">{{ category.name }}</a>
+						</li>
+					{% endfor %}
 				</ul>
 			</li>
+			{% comment %}
 			<li>
-				<a href="{% url 'blog' %}">Blog</a>
+				<a class="{% block nav_blog_active %}{% endblock %}" href="{% url 'blog' %}">Blog</a>
 			</li>
+			 {% endcomment %}
 			<li>
-				<a href="">Über mich</a>				
+				<a class="{% block nav_about_active %}{% endblock %}" href="{% url 'ueber-mich' %}">Über mich</a>
 			</li>
 		</ul>
 	</div>
 	
 	<div style="clear:both;"></div>
 	
-	<div class="slider-wrapper theme-default">
-		<div id="slider" class="nivoSlider">
-			<img height="340" width="1150" src="{% static 'images/toystory.jpg' %}" data-thumb="{% static 'images/toystory.jpg' %}" />
-			<img height="340" width="1150" src="{% static 'images/up.jpg' %}" data-thumb="{% static 'images/up.jpg' %}"  />
-			<img height="340" width="1150" src="{% static 'images/walle.jpg' %}" data-thumb="{% static 'images/walle.jpg' %}" />
-			<img height="340" width="1150" src="{% static 'images/nemo.jpg' %}" data-thumb="{% static 'images/nemo.jpg' %}" />
-		</div>
-	</div>	
-
+	{% block content %}{% endblock %}
 	
-	{% block upload %}{% endblock %}
-	{% block gallery %}{% endblock %}
-	{% block blog %}{% endblock %}
-
+	<div class="footer">
+		<a title="Über mich" href="{% url 'ueber-mich' %}"><img src="{% static 'img/ente.png' %}" /></a>
+	</div>
 	
 	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+	{% block javascript %}{% endblock %}
 	<script type="text/javascript" src="{% static 'js/jquery.nivo.slider.pack.js' %}"></script>
-	<script type="text/javascript" src="{% static 'js/lightbox-2.6.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'fancybox/lib/jquery.mousewheel-3.0.6.pack.js' %}"></script>
+	<script type="text/javascript" src="{% static 'fancybox/source/jquery.fancybox.pack.js' %}"></script>	
 	<script type="text/javascript" src="{% static 'js/scoutman.js' %}"></script>
-	
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-23788584-1']);
+		_gaq.push(['_setDomainName', 'scoutman.at']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>	
 </body>
 </html>

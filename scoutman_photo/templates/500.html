@@ -1,1 +1,14 @@
-<h1>Whoops!</h1>
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block site_name %}Uppps! | {{block.super}}{% endblock %}
+
+{% block content %}
+<div class="content">
+	<h1>Uppps!</h1>
+	Seite nicht gefunden...<br /><br />
+	Zurück zur <a href="{% url 'home:home' %}">Startseite</a>!
+</div>
+
+{% endblock content %}
+

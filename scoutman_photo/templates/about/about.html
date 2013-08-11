@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block site_name %}Über mich | {{block.super}}{% endblock %}
+
+{% block nav_about_active %}nav_active{% endblock %}
+
+{% block content %}
+	<div id="fb-root"></div>
+
+	<div class="content">
+		<h1>Über mich</h1>
+		Sascha Mlakar<br />
+		Seit 2008 mit einer DSLR unterwegs. Hauptsächlich beschäftige ich mich mit der Landschaftsfotografie. Warum? Berge können nicht blöd schauen.
+		<br /><br />
+		
+		<h2>Fototasche</h2>
+		Canon EOS 50D | Canon EOS 5D III<br />
+		Canon 50mm f/1.4 | Canon 24-105mm f/4L | Canon 70-200mm f/2.8L 
+		<br /><br />
+		
+		<h2>Kontakt</h2>
+		mail (at) scoutman (dot) at
+		<br /><br />
+		
+		<h2>Links</h2>
+		<a href="http://www.facebook.com/SaschaMlakarPhotography">Facebook</a> | <a href="http://www.fotocommunity.de/fotograf/scoutman/1855173">fotocommunity</a> | <a href="http://500px.com/scoutman">500px</a><br /><br />
+		Hier gehts nicht um Bilder: Meine Seite rund ums Thema Programmierung <a href="http://dev.scoutman.at">http://dev.scoutman.at</a>
+	</div>
+
+{% endblock content %}

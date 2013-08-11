@@ -58,4 +58,8 @@ INTERNAL_IPS = (os.environ["INTERNAL_IPS"],)
 MIDDLEWARE_CLASSES += (
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
+
+DEBUG_TOOLBAR_CONFIG = {
+    'INTERCEPT_REDIRECTS': False,
+}
 ########## END TOOLBAR CONFIGURATION
