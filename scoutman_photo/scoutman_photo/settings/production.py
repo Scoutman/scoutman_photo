@@ -70,3 +70,7 @@ SERVER_EMAIL = EMAIL_HOST_USER
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = [os.environ["ALLOWED_HOSTS"]]
 ########## END SITE CONFIGURATION
+
+########## MEDIA CONFIGURATION
+MEDIA_ROOT = os.environ["MEDIA_ROOT"]
+########## END MEDIA CONFIGURATION

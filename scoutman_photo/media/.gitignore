@@ -1,0 +1,5 @@
+# Ignore everything in this directory
+!slider/*
+*
+# Except this file
+!.gitignore
