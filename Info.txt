@@ -20,7 +20,7 @@ export EMAIL_HOST=
 export EMAIL_HOST_PASSWORD=
 export EMAIL_HOST_USER=
 export EMAIL_PORT=
-
+export MEDIA_ROOT=
 
 
 Testserver starten:
