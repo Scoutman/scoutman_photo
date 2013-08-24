@@ -46,7 +46,7 @@ class Picture(models.Model):
 	image = models.ImageField(upload_to=upload_path)
 	thumb = models.ImageField(upload_to=upload_path, blank=True, editable=False)
 	title = models.CharField(max_length=255, blank=True)
-	pub_date = models.DateTimeField(auto_now = True, auto_now_add = True)
+	pub_date = models.DateTimeField(auto_now = False, auto_now_add = True)
 	
 	class Meta:
 		ordering = ['-pub_date']

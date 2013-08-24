@@ -184,9 +184,9 @@ DJANGO_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    #'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	#'django.contrib.sitemaps',
 
     # Useful template tags:
     # 'django.contrib.humanize',
@@ -204,7 +204,7 @@ THIRD_PARTY_APPS = (
 # Apps specific for this project go here.
 LOCAL_APPS = (
     'home',
-	'upload',
+	#'upload',
     'gallery',
 )
 

@@ -2,66 +2,69 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta charset="utf-8">
 <title>{% block site_name %}{{config.site_name}}{% endblock %}</title>
 
-<meta name="description" content="Portfolio von Sascha Mlakar Photography">
+<meta charset="utf-8">
+<meta name="description" content="{% block site_description %}Portfolio von Sascha Mlakar Photography | Natur- und Landschaftsfotografie{% endblock %}">
 <meta name="author" content="Sascha Mlakar">
-<meta name="keywords" content="photography, sascha mlakar, landscape, fotografie, landschaft">
+<meta name="keywords" content="photography, sascha mlakar, fotografie, landscape, landschaft, landschaftsfotografie, natur">
 
 <link rel="author" href="https://plus.google.com/113029114753863667697" />
-
 <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}">
 <link rel="stylesheet" href="{% static 'css/scoutman.css' %}" type="text/css" media="screen" />
 {% block css %}{% endblock %}
-
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" media="screen" rel="stylesheet" type="text/css" />
 
 </head>
 
 <body>
+	
+	<header>
+		<div class="header">
+			<a href="{% url 'home:home' %}"><img src="{% static 'img/header.png' %}" /></a>
+		</div>
+	</header>
 
-	<div class="header">
-		<a href="{% url 'home:home' %}"><img src="{% static 'img/header.png' %}" /></a>
-	</div>
-
-	<div>
-		
-		<ul class='nav'>
-			
-			<li></li>
-			<li>
-				<a class="{% block nav_home_active %}{% endblock %}" href="{% url 'home:home' %}">Home</a>
-			</li>
-			<li>
-				<a class="{% block nav_gallery_active %}{% endblock %}" href="">Galerie</a>
-				<ul>
-					{% for category in category_list %}
-						<li>
-							<a href="{% url 'gallery:category' category.slug %}">{{ category.name }}</a>
-						</li>
-					{% endfor %}
-				</ul>
-			</li>
-			{% comment %}
-			<li>
-				<a class="{% block nav_blog_active %}{% endblock %}" href="{% url 'blog' %}">Blog</a>
-			</li>
-			 {% endcomment %}
-			<li>
-				<a class="{% block nav_about_active %}{% endblock %}" href="{% url 'ueber-mich' %}">Über mich</a>
-			</li>
-		</ul>
-	</div>
+	<nav>
+		<div>
+			<ul class='nav'>
+				
+				<li></li>
+				<li>
+					<a class="{% block nav_home_active %}{% endblock %}" href="{% url 'home:home' %}">Home</a>
+				</li>
+				<li>
+					<a class="{% block nav_gallery_active %}{% endblock %}" href="">Galerie</a>
+					<ul>
+						{% for category in category_list %}
+							<li>
+								<a href="{% url 'gallery:category' category.slug %}">{{ category.name }}</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</li>
+				{% comment %}
+				<li>
+					<a class="{% block nav_blog_active %}{% endblock %}" href="{% url 'blog' %}">Blog</a>
+				</li>
+				 {% endcomment %}
+				<li>
+					<a class="{% block nav_about_active %}{% endblock %}" href="{% url 'ueber-mich' %}">Über mich</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
 	
 	<div style="clear:both;"></div>
 	
 	{% block content %}{% endblock %}
 	
-	<div class="footer">
-		<a title="Über mich" href="{% url 'ueber-mich' %}"><img src="{% static 'img/ente.png' %}" /></a>
-	</div>
+	<footer>
+		<div class="footer">
+			<a title="Über mich" href="{% url 'ueber-mich' %}"><img src="{% static 'img/ente.png' %}" /></a>
+		</div>
+	</footer>
 	
 	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
 	{% block javascript %}{% endblock %}

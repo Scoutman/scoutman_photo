@@ -3,6 +3,8 @@
 
 {% block site_name %}Galerie {{category}} | {{block.super}}{% endblock %}
 
+{% block site_description %}Eine Übersicht der Galerie {{category}}{% endblock %}
+
 {% block css %}
 <link rel="stylesheet" href="{% static 'css/lightbox.css' %}" type="text/css" media="screen" />
 <link rel="stylesheet" href="{% static 'fancybox/source/jquery.fancybox.css' %}" type="text/css" media="screen" />
@@ -11,16 +13,16 @@
 {% block nav_gallery_active %}nav_active{% endblock %}
 
 {% block content %}
-	<div class="gallery">
-		
-		<h1>{{category}}</h1>
-		
-		{% for img in category.picture_set.all %}
-		<a title="{{img.title}}" class="fancybox" rel="{{category.slug}}" href="{{ MEDIA_URL }}{{img.image}}"><img src="{{ MEDIA_URL }}{{img.thumb}}" alt="" /></a>
-		
-		{% endfor %}
-		
-	</div>
+	<article>
+		<div class="gallery">
+			<header>
+				<h1>{{category}}</h1>
+			</header>
+			{% for img in category.picture_set.all %}
+			<a title="{{img.title}}" class="fancybox" rel="{{category.slug}}" href="{{ MEDIA_URL }}{{img.image}}"><img src="{{ MEDIA_URL }}{{img.thumb}}" alt="" /></a>			
+			{% endfor %}
+		</div>
+	</article>
 {% endblock content %}
 
 {% block javascript %}
