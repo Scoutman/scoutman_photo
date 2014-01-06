@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load compress %}
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -11,10 +12,13 @@
 
 <link rel="author" href="https://plus.google.com/113029114753863667697" />
 <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+{% compress css %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}">
 <link rel="stylesheet" href="{% static 'css/scoutman.css' %}" type="text/css" media="screen" />
 {% block css %}{% endblock %}
+{% endcompress %}
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" media="screen" rel="stylesheet" type="text/css" />
+
 
 </head>
 
@@ -66,13 +70,15 @@
 		</div>
 	</footer>
 	
+	
 	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
 	{% block javascript %}{% endblock %}
 	<script type="text/javascript" src="{% static 'js/jquery.nivo.slider.pack.js' %}"></script>
 	<script type="text/javascript" src="{% static 'fancybox/lib/jquery.mousewheel-3.0.6.pack.js' %}"></script>
 	<script type="text/javascript" src="{% static 'fancybox/source/jquery.fancybox.pack.js' %}"></script>	
 	<script type="text/javascript" src="{% static 'js/scoutman.js' %}"></script>
-
+	
+	
 	<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
