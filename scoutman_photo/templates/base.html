@@ -1,5 +1,4 @@
 {% load staticfiles %}
-{% load compress %}
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -12,11 +11,9 @@
 
 <link rel="author" href="https://plus.google.com/113029114753863667697" />
 <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
-{% compress css %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}">
 <link rel="stylesheet" href="{% static 'css/scoutman.css' %}" type="text/css" media="screen" />
 {% block css %}{% endblock %}
-{% endcompress %}
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" media="screen" rel="stylesheet" type="text/css" />
 
 
