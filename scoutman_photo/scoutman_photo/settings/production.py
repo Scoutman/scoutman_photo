@@ -74,3 +74,14 @@ ALLOWED_HOSTS = [os.environ["ALLOWED_HOSTS"]]
 ########## MEDIA CONFIGURATION
 MEDIA_ROOT = os.environ["MEDIA_ROOT"]
 ########## END MEDIA CONFIGURATION
+
+########## DJANGO COMPRESSOR CONFIGURATION
+COMPRESS_OFFLINE_CONTEXT = {
+    'path_to_files': '/static/',
+}
+
+COMPRESS_CSS_FILTERS = [
+    'compressor.filters.cssmin.CSSMinFilter'
+]
+COMPRESS_OFFLINE = True
+########## END DJANGO COMPRESSOR CONFIGURATION

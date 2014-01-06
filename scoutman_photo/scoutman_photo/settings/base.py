@@ -263,4 +263,3 @@ SITE_CONFIG = {
 	'thumb_height' : '260',
 }
 ########## ENDSITE CONFIGURATION
-
