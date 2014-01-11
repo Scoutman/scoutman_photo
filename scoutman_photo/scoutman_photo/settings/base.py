@@ -1,10 +1,9 @@
 # encoding: utf-8
 """Common settings and globals."""
 
-import os
 from os.path import abspath, basename, dirname, join, normpath
 from sys import path
-
+from common.utils import env_var
 
 ########## PATH CONFIGURATION
 # Absolute filesystem path to the Django project directory:
@@ -34,7 +33,7 @@ TEMPLATE_DEBUG = DEBUG
 ########## MANAGER CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
 ADMINS = (
-    (os.environ["ADMIN_NAME"], os.environ["ADMIN_EMAIL"]),
+    (env_var("ADMIN_NAME"), env_var("ADMIN_EMAIL")),
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
@@ -46,12 +45,12 @@ MANAGERS = ADMINS
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': os.environ["DB_ENGINE"],
-        'NAME': os.environ["DB_NAME"],
-        'USER': os.environ["DB_USER"],
-        'PASSWORD': os.environ["DB_PASSWORD"],
-        'HOST': os.environ["DB_HOST"],
-        'PORT': os.environ["DB_PORT"],
+        'ENGINE': env_var("DB_ENGINE"),
+        'NAME': env_var("DB_NAME"),
+        'USER': env_var("DB_USER"),
+        'PASSWORD': env_var("DB_PASSWORD"),
+        'HOST': env_var("DB_HOST"),
+        'PORT': env_var("DB_PORT"),
     }
 }
 ########## END DATABASE CONFIGURATION
@@ -111,14 +110,14 @@ STATICFILES_FINDERS = (
 ########## SECRET CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Note: This key should only be used for development and testing.
-SECRET_KEY = os.environ["SECRET_KEY"]
+SECRET_KEY = env_var("SECRET_KEY")
 ########## END SECRET CONFIGURATION
 
 
 ########## SITE CONFIGURATION
 # Hosts/domain names that are valid for this site
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env_var("ALLOWED_HOSTS")
 ########## END SITE CONFIGURATION
 
 
@@ -200,7 +199,6 @@ DJANGO_APPS = (
 THIRD_PARTY_APPS = (
     # Database migration helpers:
     'south',
-    'compressor',
 )
 
 # Apps specific for this project go here.

@@ -1,9 +1,9 @@
+# encoding: utf-8
 """Development settings and globals."""
 
-import os
 from os.path import join, normpath
 from base import *
-
+from common.utils import env_var
 
 ########## DEBUG CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#debug
@@ -52,7 +52,7 @@ INSTALLED_APPS += (
 )
 
 # See: https://github.com/django-debug-toolbar/django-debug-toolbar#installation
-INTERNAL_IPS = (os.environ["INTERNAL_IPS"],)
+INTERNAL_IPS = (env_var("INTERNAL_IPS"),)
 
 # See: https://github.com/django-debug-toolbar/django-debug-toolbar#installation
 MIDDLEWARE_CLASSES += (

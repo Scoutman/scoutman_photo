@@ -30,6 +30,8 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "scoutman_photo.settings.product
 # file. This includes Django's development server, if the WSGI_APPLICATION
 # setting points here.
 from django.core.wsgi import get_wsgi_application
+from common.utils import read_env
+read_env()
 application = get_wsgi_application()
 
 # Apply WSGI middleware here.
