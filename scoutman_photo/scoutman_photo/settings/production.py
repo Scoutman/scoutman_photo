@@ -30,3 +30,5 @@ EMAIL_SUBJECT_PREFIX = '[%s] ' % SITE_NAME
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#server-email
 SERVER_EMAIL = EMAIL_HOST_USER
 ########## END EMAIL CONFIGURATION
+
+MEDIA_ROOT = env_var('MEDIA_ROOT')
