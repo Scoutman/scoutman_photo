@@ -31,8 +31,4 @@ EMAIL_SUBJECT_PREFIX = '[%s] ' % SITE_NAME
 SERVER_EMAIL = EMAIL_HOST_USER
 ########## END EMAIL CONFIGURATION
 
-<<<<<<< HEAD
 MEDIA_ROOT = env_var('MEDIA_ROOT')
-=======
-MEDIA_ROOT = env_var('MEDIA_ROOT')
->>>>>>> cfea9dffac0b4555d27b46bd8bacc8d0d56ec559
