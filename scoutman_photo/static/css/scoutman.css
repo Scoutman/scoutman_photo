@@ -7,17 +7,21 @@ body {
 	
 	background-color: #424343;
 	
+	
+	/*
+	background-image: url('../img/background.svg');
 	background-attachment: fixed;
 	background-clip: border-box;
-	background-image: url('../img/background.svg');
 	background-origin: padding-box;
 	background-position: 50% 50%;
 	background-repeat: repeat;
 	background-size: 100% 100%;
-	
+	*/
+
 	max-width: 1150px;
 	width: 90%;
 	min-width: 300px;		
+	height: 100%;
 	margin: 0px auto 20px;
 }
 
@@ -38,26 +42,79 @@ body {
 
 .gallery {
 	background: rgba(48, 48, 48, 0.5);
-	padding-bottom: 20px;
-	
-}
-	
-.gallery a {
-	margin: 0px;
-	padding: 0px;
-	margin-left: 20px;
-	margin-top: 20px;
-	display: inline-block;
-	outline: 0;
-}
-
-.gallery img {
-	display: block;
+	padding: 20px;
 }
 
 .gallery h1 {
-	padding-top: 40px;
-	padding-left: 40px;
+	padding-left: 20px;
+}
+
+.content_gallery {
+	max-width: 1085px;
+	margin: auto;
+}
+
+.content_gallery::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.picture-container {
+	float: left;
+	padding: 0.5%;
+	width: 24%;
+	height: 100%;
+}
+
+.picture {
+	width: 100%;
+	height: 100%;
+	display: table;
+}
+
+@media (max-width: 600px) {
+	
+	body {
+		margin: 0px auto 0px;
+		width: 100%;
+		font-size: 18px;
+	}
+
+	h1 {
+		font-size: 26px;
+	}
+
+	h2 {
+		font-size: 22px;
+	}
+	
+	.gallery h1 {
+		padding-top: 10px;
+		padding-left: 10px;
+	}
+	
+	.content {
+		padding: 20px;
+	}
+
+	.header {
+		padding-top: 10px;
+		padding-left: 10px;
+	}
+
+	.header img {
+		width: 180px;
+	}
+
+	.gallery {
+		padding: 5px;
+	}
+
+	.picture-container {
+		padding: 0.5%;
+		width: 32.33333333%;
+	}
 }
 
 a:hover {

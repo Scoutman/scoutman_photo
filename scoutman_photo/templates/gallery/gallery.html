@@ -17,9 +17,19 @@
 			<header>
 				<h1>{{category}}</h1>
 			</header>
+			
+			<div class="content_gallery">
+		
+			
 			{% for img in category.picture_set.all %}
-			<a title="{{img.title}}" class="fancybox" rel="{{category.slug}}" href="{{ MEDIA_URL }}{{img.image}}"><img src="{{ MEDIA_URL }}{{img.thumb}}" alt="" /></a>			
+				<!--<a title="{{img.title}}" class="fancybox" rel="{{category.slug}}" href="{{ MEDIA_URL }}{{img.image}}"><img src="{{ MEDIA_URL }}{{img.thumb}}" alt="" /></a>-->
+				<div class="picture-container">
+					<a title="{{img.title}}" class="fancybox" rel="{{category.slug}}" href="{{ MEDIA_URL }}{{img.image}}">
+						<img class="picture" src="{{ MEDIA_URL }}{{img.thumb}}" alt="" />
+					</a>
+				</div>
 			{% endfor %}
+
 		</div>
 	</article>
 {% endblock content %}

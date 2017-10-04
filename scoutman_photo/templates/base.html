@@ -8,8 +8,8 @@
 <meta name="description" content="{% block site_description %}Portfolio von Sascha Mlakar Photography | Natur- und Landschaftsfotografie{% endblock %}">
 <meta name="author" content="Sascha Mlakar">
 <meta name="keywords" content="photography, sascha mlakar, fotografie, landscape, landschaft, landschaftsfotografie, natur">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="author" href="https://plus.google.com/113029114753863667697" />
 <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}">
 <link rel="stylesheet" href="{% static 'css/scoutman.css' %}" type="text/css" media="screen" />
@@ -36,7 +36,7 @@
 					<a class="{% block nav_home_active %}{% endblock %}" href="{% url 'home:home' %}">Home</a>
 				</li>
 				<li>
-					<a class="{% block nav_gallery_active %}{% endblock %}" href="">Galerie</a>
+					<span class="{% block nav_gallery_active %}{% endblock %}">Galerie</span>
 					<ul>
 						{% for category in category_list %}
 							<li>
