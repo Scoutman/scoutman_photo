@@ -9,7 +9,7 @@ class CategoryAdmin(admin.ModelAdmin):
 admin.site.register(Category, CategoryAdmin)
 
 class PictureAdmin(admin.ModelAdmin):
-	list_display = ('image', 'title', 'category', 'pub_date', 'thumb_path')
+	list_display = ('id', 'image', 'title', 'category', 'pub_date', 'thumb_path')
 	list_filter = ['category']
 	
 admin.site.register(Picture, PictureAdmin)

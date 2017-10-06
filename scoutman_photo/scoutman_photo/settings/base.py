@@ -51,6 +51,8 @@ DATABASES = {
         'PASSWORD': env_var("DB_PASSWORD"),
         'HOST': env_var("DB_HOST"),
         'PORT': env_var("DB_PORT"),
+
+        'OPTIONS' : {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"}
     }
 }
 ########## END DATABASE CONFIGURATION
@@ -130,31 +132,30 @@ FIXTURE_DIRS = (
 
 
 ########## TEMPLATE CONFIGURATION
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.contrib.auth.context_processors.auth',
-    'django.core.context_processors.debug',
-    'django.core.context_processors.i18n',
-    'django.core.context_processors.media',
-    'django.core.context_processors.static',
-    'django.core.context_processors.tz',
-    'django.contrib.messages.context_processors.messages',
-    'django.core.context_processors.request',
-	
-	'gallery.context_processors.menu',
-	'common.context_processors.config',
-)
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            # TEMPLATE_DIRS
+            normpath(join(SITE_ROOT, 'templates'))
+        ],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.contrib.messages.context_processors.messages',
 
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-)
-
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
-TEMPLATE_DIRS = (
-    normpath(join(SITE_ROOT, 'templates')),
-)
+                    'gallery.context_processors.menu',
+                    'common.context_processors.config',                
+            ],
+        },
+    },
+]
 ########## END TEMPLATE CONFIGURATION
 
 

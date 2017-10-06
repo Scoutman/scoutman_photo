@@ -4,20 +4,7 @@ body {
 	font-size: 14px;
 	text-decoration:none;
 	line-height: 1.5;
-	
-	background-color: #424343;
-	
-	
-	/*
-	background-image: url('../img/background.svg');
-	background-attachment: fixed;
-	background-clip: border-box;
-	background-origin: padding-box;
-	background-position: 50% 50%;
-	background-repeat: repeat;
-	background-size: 100% 100%;
-	*/
-
+	background-color: #191919;
 	max-width: 1150px;
 	width: 90%;
 	min-width: 300px;		
@@ -31,7 +18,7 @@ body {
 }
 
 .content {
-	background: rgba(48, 48, 48, 0.5);
+	background-color: #2F2F31;
 	padding: 40px;
 }
 
@@ -41,7 +28,7 @@ body {
 }
 
 .gallery {
-	background: rgba(48, 48, 48, 0.5);
+	background-color: #2F2F31;
 	padding: 20px;
 }
 
@@ -177,7 +164,7 @@ a img {
 	list-style-position: outside;
 	list-style-type: none;	
 	position: absolute;
-	background: rgba(48, 48, 48, 0.9);
+	background-color: #3e3e41;
 	margin: 0px;
 	padding: 0px;
 	z-index: 100;
