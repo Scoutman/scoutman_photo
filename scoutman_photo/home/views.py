@@ -1,5 +1,5 @@
 # encoding: utf-8
-import os
+import os, random
 from django.shortcuts import render, get_object_or_404
 from django.conf import settings
 
@@ -16,4 +16,6 @@ def index(request):
 			img_list[i] = "slider/%s" % file
 			i += 1
 	
-	return render(request, 'home/home.html', {'img_list' : img_list})
+	r = random.choice(list(img_list))
+
+	return render(request, 'home/home.html', {'slider_img' : img_list[r]})

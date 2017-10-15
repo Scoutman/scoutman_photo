@@ -254,8 +254,6 @@ WSGI_APPLICATION = '%s.wsgi.application' % SITE_NAME
 ########## SITE CONFIGURATION
 SITE_CONFIG = {
 	'site_name' : 'Sascha Mlakar - Photography',
-	'home_slider_width' : '1150',
-	'home_slider_height' : '340',
 	'thumb_width' : '260',
 	'thumb_height' : '260',
 }

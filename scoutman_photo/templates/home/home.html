@@ -1,23 +1,14 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block css %}
-<link rel="stylesheet" href="{% static 'css/nivo-slider.css' %}" type="text/css" media="screen" />
-<link rel="stylesheet" href="{% static 'css/nivo-slider-default.css' %}" type="text/css" media="screen" />
-{% endblock css %}
-
 {% block nav_home_active %}nav_active{% endblock %}
 
 {% block content %}
-	<article>
-		<div class="slider-wrapper theme-default">
-			<div id="slider" class="nivoSlider">
-				{% for key, name in img_list.items %}
-					<img height="{{config.home_slider_height}}" width="{{config.home_slider_width}}" src="{{ MEDIA_URL }}{{name}}" data-thumb="{{ MEDIA_URL }}{{name}}" />
-				{% endfor %}
-			</div>
-		</div>
-	</article>
+	
+	<div class="slider_container" style="background-image: url('{{ MEDIA_URL }}{{ slider_img }}');">
+		 
+	</div>
+	
 {% endblock content %}
 
 {% block javascript %}

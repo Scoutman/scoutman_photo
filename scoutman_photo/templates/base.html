@@ -9,13 +9,15 @@
 <meta name="author" content="Sascha Mlakar">
 <meta name="keywords" content="photography, sascha mlakar, fotografie, landscape, landschaft, landschaftsfotografie, natur">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#91d42b">
+<meta name="theme-color" content="#2F2F31">
 
 <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}">
 <link rel="stylesheet" href="{% static 'css/scoutman.css' %}" type="text/css" media="screen" />
+<link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
 {% block css %}{% endblock %}
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" media="screen" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700" rel="stylesheet">
 <link rel="apple-touch-icon" href="{% static 'img/ente-128px.png' %}" />
 
 </head>
@@ -24,38 +26,33 @@
 	
 	<header>
 		<div class="header">
-			<a href="{% url 'home:home' %}"><img src="{% static 'img/header.png' %}" /></a>
+			<a href="{% url 'home:home' %}"><img width="300" src="{% static 'img/Unterschrift_Sascha_Photography.png' %}" /></a>
 		</div>
 	</header>
 
 	<nav>
-		<div>
-			<ul class='nav'>
-				
-				<li></li>
-				<li>
-					<a class="{% block nav_home_active %}{% endblock %}" href="{% url 'home:home' %}">Home</a>
-				</li>
-				<li>
-					<span class="{% block nav_gallery_active %}{% endblock %}">Galerie</span>
-					<ul>
-						{% for category in category_list %}
-							<li>
-								<a href="{% url 'gallery:category' category.slug %}">{{ category.name }}</a>
-							</li>
-						{% endfor %}
-					</ul>
-				</li>
-				{% comment %}
-				<li>
-					<a class="{% block nav_blog_active %}{% endblock %}" href="{% url 'blog' %}">Blog</a>
-				</li>
-				 {% endcomment %}
-				<li>
-					<a class="{% block nav_about_active %}{% endblock %}" href="{% url 'ueber-mich' %}">Über mich</a>
-				</li>
-			</ul>
-		</div>
+		<ul class="nav">
+							
+			<li>
+				<a class="{% block nav_home_active %}{% endblock %}" href="{% url 'home:home' %}">Home</a>
+			</li>
+			
+			<li>
+				<span class="{% block nav_gallery_active %}{% endblock %}">Galerie</span>
+				<ul>
+					{% for category in category_list %}
+						<li>
+							<a href="{% url 'gallery:category' category.slug %}">{{ category.name }}</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</li>
+
+			<li>
+				<a class="{% block nav_about_active %}{% endblock %}" href="{% url 'ueber-mich' %}">Über mich</a>
+			</li>
+
+		</ul>
 	</nav>
 	
 	<div style="clear:both;"></div>
@@ -63,14 +60,15 @@
 	{% block content %}{% endblock %}
 	
 	<footer>
-		<div class="footer">
-			<a title="Über mich" href="{% url 'ueber-mich' %}"><img src="{% static 'img/ente.png' %}" /></a>
-		</div>
+
+		<a href="http://www.facebook.com/SaschaMlakarPhotography"><i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i></a>
+		<a href="https://www.instagram.com/scoutman_at"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a>
+		<a href="http://500px.com/scoutman"><i class="fa fa-500px fa-lg" aria-hidden="true"></i></a>
+
 	</footer>
 	
 	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
 	{% block javascript %}{% endblock %}
-	<script type="text/javascript" src="{% static 'js/jquery.nivo.slider.pack.js' %}"></script>
 	<script type="text/javascript" src="{% static 'fancybox/lib/jquery.mousewheel-3.0.6.pack.js' %}"></script>
 	<script type="text/javascript" src="{% static 'fancybox/source/jquery.fancybox.pack.js' %}"></script>	
 	<script type="text/javascript" src="{% static 'js/scoutman.js' %}"></script>

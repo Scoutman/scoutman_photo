@@ -20,16 +20,15 @@
 			
 			<div class="content_gallery">
 		
-			
-			{% for img in category.picture_set.all %}
-				<!--<a title="{{img.title}}" class="fancybox" rel="{{category.slug}}" href="{{ MEDIA_URL }}{{img.image}}"><img src="{{ MEDIA_URL }}{{img.thumb}}" alt="" /></a>-->
-				<div class="picture-container">
-					<a title="{{img.title}}" class="fancybox" rel="{{category.slug}}" href="{{ MEDIA_URL }}{{img.image}}">
-						<img class="picture" src="{{ MEDIA_URL }}{{img.thumb}}" alt="" />
-					</a>
-				</div>
-			{% endfor %}
-
+				{% for img in category.picture_set.all %}
+					<div class="picture-container">
+						<a title="{{img.title}}" class="fancybox" rel="{{category.slug}}" href="{{ MEDIA_URL }}{{img.image}}">
+							<img class="picture" src="{{ MEDIA_URL }}{{img.thumb}}" alt="" />
+						</a>
+					</div>
+				{% endfor %}
+				
+			</div>
 		</div>
 	</article>
 {% endblock content %}
