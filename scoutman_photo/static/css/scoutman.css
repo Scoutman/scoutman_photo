@@ -1,3 +1,7 @@
+/*
+	gruen: #91d42b
+*/
+
 body, html {
 	font-family: 'Poppins', sans-serif;
 	color:#dddddd;
@@ -87,7 +91,7 @@ footer i {
 }
 
 h1 {
-	color: #91d42b;
+	color: #bc9981;
 	font-size: 24px;
 	font-weight: normal;
 	letter-spacing: 1.5px;
@@ -96,7 +100,7 @@ h1 {
 }
 
 h2 {
-	color: #91d42b;
+	color: #bc9981;
 	font-size: 22px;
 	font-weight: normal;
 	letter-spacing: 1.5px;
@@ -125,7 +129,7 @@ a img {
 }
 
 .nav_active {
-	color:#91d42b!important;
+	color:#bc9981!important;
 }
 
 .nav li {
@@ -163,22 +167,22 @@ a img {
 
 .nav li a:link {color:#dddddd; text-decoration:none; display: block;}
 .nav li a:visited {color:#dddddd; text-decoration:none;}
-.nav li a:hover {color:#91d42b; text-decoration:none;}
-.nav li a:active {color:#91d42b; text-decoration:none;}
+.nav li a:hover {color:#bc9981; text-decoration:none;}
+.nav li a:active {color:#bc9981; text-decoration:none;}
 
 .nav ul li a:link {font-size: 18px;}
-.nav ul li a:hover {color: #91d42b;}
+.nav ul li a:hover {color: #bc9981;}
 
 /*  Links */
-a:link {color:#91d42b; text-decoration:none;}
-a:visited {color:#91d42b; text-decoration:none;}
-a:hover {color:#91d42b; text-decoration:underline;}
-a:active {color:#91d42b; text-decoration:underline;}
+a:link {color:#bc9981; text-decoration:none;}
+a:visited {color:#bc9981; text-decoration:none;}
+a:hover {color:#bc9981; text-decoration:underline;}
+a:active {color:#bc9981; text-decoration:underline;}
 
 footer a:link {color:#dddddd; text-decoration:none;}
 footer a:visited {color:#dddddd; text-decoration:none;}
-footer a:hover {color:#2F2F31; text-decoration:underline;}
-footer a:active {color:#2F2F31; text-decoration:underline;}
+footer a:hover {color:#bc9981; text-decoration:underline;}
+footer a:active {color:#bc9981; text-decoration:underline;}
 
 @media (max-width: 600px) {
 	
