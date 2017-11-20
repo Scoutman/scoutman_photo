@@ -94,7 +94,7 @@ footer i {
 	text-align: center;
 }
 
-.portrait_image img {
+.portrait_container img {
 	max-width: 100%; 
 	height: auto;
 }
