@@ -90,6 +90,15 @@ footer i {
 	display: table;
 }
 
+.portrait_container {
+	text-align: center;
+}
+
+.portrait_image img {
+	max-width: 100%; 
+	height: auto;
+}
+
 h1 {
 	color: #bc9981;
 	font-size: 24px;
